@@ -27,22 +27,28 @@ void swap(int *x, int *y)
 int lomuto_partition(int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
-	int i = low;
+	int i = low - 1;
 	int j;
 
-	for (j = low; j < high; j++)
+	for (j = low; j <= high - 1; j++)
 	{
 		if (array[j] <= pivot)
 		{
-			swap(&array[i], &array[j]);
 			i++;
+			if (i != j)
+			{
+				swap(&array[i], &array[j]);
+				print_array(array, size);
+			}
 		}
 	}
+	if (i + 1 != high)
+	{
+		swap(&array[i + 1], &array[high]);
+		print_array(array, size);
+	}
 
-	swap(&array[i], &array[high]);
-	print_array(array, size);
-
-	return (i);
+	return (i + 1);
 }
 /**
  *quick_sort_recursive - This is the entry point of the code
