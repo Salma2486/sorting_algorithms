@@ -29,7 +29,8 @@ void radix_sort(int *array, size_t size);
 int getMax(const int *array, size_t size);
 void radix_counting_sort(int *array, size_t size, int exp, int *ptr);
 void swap_ints(int *x, int *y);
-void bitonic_merge(int *array, size_t size, size_t start, size_t seq, char flow);
+void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
+		char flow);
 void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
 void bitonic_sort(int *array, size_t size);
 #endif
