@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "sort.h"
 /**
  * counting_sort - sort ....
  * @array: an array
@@ -27,11 +26,11 @@ void counting_sort(int *array, size_t size)
 	{
 		count_array[array[i]]++;
 	}
-
 	for (j = 1; j <= max_value; j++)
 	{
 		count_array[j] += count_array[j - 1];
 	}
+	print_array(count_array, max_value + 1);
 	sorted_arr = malloc(size * sizeof(int));
 
 	for (j = size - 1; j >= 0; j--)
